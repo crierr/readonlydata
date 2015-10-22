@@ -20,7 +20,7 @@ private:
 public:
 
 	static Nan::Persistent<Function> SuperClass;
-	static void Init(Local<Object> target)
+	static NAN_MODULE_INIT(Init)
 	{
 		Nan::HandleScope scope;
 
@@ -133,7 +133,7 @@ public:
 Nan::Persistent<Function> ReadOnlyTemplate::SuperClass;
 
 extern "C" {
-	static void init (Local<Object> target)
+	static NAN_MODULE_INIT(init)
 	{
 		ReadOnlyTemplate::Init(target);
 	}
