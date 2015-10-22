@@ -1,11 +1,19 @@
+sudo: false
 language: node_js
 node_js:
-  - 0.6
-  - 0.8
-  - 0.10
-branches:
-  only:
-    - master
-notifications:
-  email:
-    - hey.calmdown@gmail.com+github
+  - "0.8"
+  - "0.10"
+  - "0.12"
+  - "iojs-v1"
+  - "iojs-v2"
+  - "iojs-v3"
+  - "4"
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - gcc-4.8
+      - g++-4.8
+env:
+  - CXX=g++-4.8
